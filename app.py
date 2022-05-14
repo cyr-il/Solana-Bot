@@ -2,6 +2,7 @@ from dataclasses import is_dataclass
 from ntpath import join
 from typing import final
 import requests
+import datetime
 from bs4 import BeautifulSoup
 import log
 
@@ -28,5 +29,6 @@ strings = [str(integer) for integer in integers]
 a_string = "".join(strings)
 an_integer = int(a_string)
 solanaValue = float(an_integer / 100)
-if (solanaValue > 48):
+print(solanaValue)
+if (solanaValue < 48):
     log.discord("Achète du Solana car le prix est maintenant de {} €".format(solanaValue))

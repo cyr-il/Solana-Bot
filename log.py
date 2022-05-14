@@ -1,5 +1,10 @@
+from yarl import URL
+import os
+from dotenv import load_dotenv
+load_dotenv()
 import discord_notify as dn 
 
+URL = os.getenv("URL")
 def discord(message):
-    notifier = dn.Notifier('https://discord.com/api/webhooks/974831319353794620/ZSx2g8Gtf0DphQn8eUAyNfTovrGESyOu1gOqhGJat1s8WR1VCHQmBaoRAGNUyRLddUCj')
+    notifier = dn.Notifier(URL)
     notifier.send(message, print_message=False)
